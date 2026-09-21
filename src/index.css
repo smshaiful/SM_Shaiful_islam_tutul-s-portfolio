@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #9047ff;
+  --primary-rgb: 144, 71, 255;
+  --primary-active: #7114ff;
+  --primary-active-rgb: 113, 20, 255;
+  --status-danger: #ff3b30;
+  --status-success: #319f43;
+  --background: #f5efff;
+  --background-rgb: 245, 239, 255;
+  --foreground: #2a1647;
+  --foreground-rgb: 42, 22, 71;
+  --foreground-muted: #64698b;
+  --foreground-muted-rgb: 100, 105, 139;
+  --border: #e2e4f0;
+  --border-rgb: 226, 228, 240;
+  --card: #ffffff;
+  --card-rgb: 255, 255, 255;
+  --muted: #f1f2f9;
+  --muted-rgb: 241, 242, 249;
+  --contrast: #000000;
+  --contrast-rgb: 0, 0, 0;
+  --glass: rgba(255, 255, 255, 0.75);
+  --backdrop: rgba(0, 0, 0, 0.8);
+  --btn-stroke: linear-gradient(90deg, #2d257d 0%, #8e2de2 49%, #cbd5e1 100%);
+  --grid-line: rgba(184, 184, 184, 0.12);
+}
+
+:root[data-theme='dark'] {
+  --primary: #9047ff;
+  --primary-rgb: 144, 71, 255;
+  --primary-active: #7114ff;
+  --primary-active-rgb: 113, 20, 255;
+  --status-danger: #ff3b30;
+  --status-success: #319f43;
+  --background: #121212;
+  --background-rgb: 18, 18, 18;
+  --foreground: #ffffff;
+  --foreground-rgb: 255, 255, 255;
+  --foreground-muted: #a3a6c1;
+  --foreground-muted-rgb: 163, 166, 193;
+  --border: #30343f;
+  --border-rgb: 48, 52, 63;
+  --card: #181818;
+  --card-rgb: 24, 24, 24;
+  --muted: #25282e;
+  --muted-rgb: 37, 40, 46;
+  --contrast: #ffffff;
+  --contrast-rgb: 255, 255, 255;
+  --glass: rgba(24, 24, 24, 0.75);
+  --backdrop: rgba(0, 0, 0, 0.9);
+  --btn-stroke: linear-gradient(90deg, rgba(45, 37, 125, 0.6) 0%, rgba(142, 45, 226, 0.6) 50%, rgba(144, 71, 255, 0.6) 100%);
+  --grid-line: rgba(255, 255, 255, 0.04);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(144, 71, 255, 0.3);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(144, 71, 255, 0.6);
+}
+
+/* Background Grid Lines */
+.bg-grid-overlay {
+  background-size: calc(100% / 12) 100%;
+  background-image: repeating-linear-gradient(
+    to right,
+    var(--grid-line) 0,
+    var(--grid-line) 1px,
+    transparent 1px,
+    transparent calc(100% / 12)
+  );
+}
+
+/* Glassmorphic Surfaces */
+.glass-panel {
+  background: var(--glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+}
+
+.glass-pill {
+  background: rgba(var(--primary-rgb), 0.12);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(var(--primary-rgb), 0.25);
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 25px -5px rgba(var(--primary-rgb), 0.5);
+}
+
+/* Text Shimmer Effect */
+@keyframes textShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    currentColor 0%,
+    var(--primary) 50%,
+    currentColor 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: textShimmer 8s infinite linear;
+}
+
+/* Button with gradient border */
+.btn-border-gradient {
+  position: relative;
+  border-radius: 9999px;
+  background: var(--card);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-border-gradient::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: var(--btn-stroke);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Hide default cursor on desktop when custom cursor active */
+@media (pointer: fine) {
+  body.custom-cursor-active {
+    cursor: none;
+  }
+  body.custom-cursor-active a,
+  body.custom-cursor-active button,
+  body.custom-cursor-active input,
+  body.custom-cursor-active textarea {
+    cursor: none;
+  }
+}
