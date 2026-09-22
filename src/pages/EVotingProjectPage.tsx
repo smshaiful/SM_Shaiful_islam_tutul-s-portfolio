@@ -193,7 +193,7 @@ export const EVotingProjectPage: React.FC<EVotingProjectPageProps> = ({ onBack }
 
         <div className="flex items-center gap-3">
           <a
-            href="https://github.com/smsitutul"
+            href="https://github.com/smshaiful"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#38bdf8]/15 hover:bg-[#38bdf8] text-[#38bdf8] hover:text-[#0f1b2d] border border-[#38bdf8]/40 transition-all font-mono text-sm sm:text-base font-bold shadow-md shadow-[#38bdf8]/20"

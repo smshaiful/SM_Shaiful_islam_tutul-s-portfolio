@@ -89,7 +89,7 @@ export const Footer: React.FC<FooterProps> = ({
   const linkedinLink = socials.find(s => s.name.toLowerCase().includes('linkedin'))?.url || 
     'https://www.linkedin.com/in/sm-shaiful-islam-tutul-3a6423389/';
   const githubLink = socials.find(s => s.name.toLowerCase().includes('github'))?.url || 
-    'https://github.com/smsitutul';
+    'https://github.com/smshaiful';
 
   return (
     <footer id="contact" className="relative z-10 border-t border-border/50 bg-[#0b1320]/80 backdrop-blur-2xl text-foreground select-none overflow-hidden">
@@ -236,7 +236,7 @@ export const Footer: React.FC<FooterProps> = ({
               </p>
             </div>
             <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-between font-mono text-xs">
-              <span className="text-primary font-semibold">@smsitutul</span>
+              <span className="text-primary font-semibold">@smshaiful</span>
               <span className="text-foreground-muted/60 text-[10px]">EXPLORE CODE ↗</span>
             </div>
           </a>

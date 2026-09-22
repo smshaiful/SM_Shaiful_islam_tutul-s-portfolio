@@ -199,7 +199,7 @@ export const FireFightingRobotPage: React.FC<FireFightingRobotPageProps> = ({ on
 
         <div className="flex items-center gap-3">
           <a
-            href="https://github.com/smsitutul"
+            href="https://github.com/smshaiful"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full bg-[#ff5c7c]/15 hover:bg-[#ff5c7c] text-[#ff5c7c] hover:text-[#0f1b2d] border border-[#ff5c7c]/40 transition-all font-mono text-sm sm:text-base font-bold shadow-md shadow-[#ff5c7c]/20"

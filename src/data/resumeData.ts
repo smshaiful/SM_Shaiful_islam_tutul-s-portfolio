@@ -23,7 +23,7 @@ export const resumeData: PortfolioData = {
     resumePdfUrl: "./SM_Shaiful_Islam_Tutul_Resume.pdf",
     socials: [
       { name: "LinkedIn", url: "https://www.linkedin.com/in/sm-shaiful-islam-tutul-3a6423389/", index: "01", handle: "sm-shaiful-islam-tutul" },
-      { name: "GitHub", url: "https://github.com/smsitutul", index: "02", handle: "@smsitutul" },
+      { name: "GitHub", url: "https://github.com/smshaiful", index: "02", handle: "@smshaiful" },
       { name: "Email", url: "mailto:smshaifulislam46@gmail.com", index: "03", handle: "smshaifulislam46@gmail.com" },
     ],
   },
@@ -250,8 +250,8 @@ void detectBPM(int val) {
         },
       ],
       reportAbstract: "This project showcases an autonomous fire-fighting robot developed as a 1st-year engineering prototype at JSTU. By leveraging an Arduino UNO, L298N motor driver, 3x IR flame sensors, and an oscillating servo water pump, the robot detects fire sources autonomously, maneuvers towards them, and extinguishes the flames.",
-      liveUrl: "https://github.com/smsitutul",
-      githubUrl: "https://github.com/smsitutul",
+      liveUrl: "https://github.com/smshaiful",
+      githubUrl: "https://github.com/smshaiful",
     },
     {
       id: "esp32-evoting",
@@ -311,8 +311,8 @@ if cursor.rowcount == 0:
         },
       ],
       reportAbstract: "A complete e-voting prototype for institutional elections. Voters are authenticated by fingerprint at an ESP32 kiosk, cast a symbol-based touch ballot under a server-enforced time policy, and results are computed instantly, published as a controlled PDF, and recorded in a hash-chain ledger. The database never stores a link between a voter and their choice.",
-      liveUrl: "https://github.com/smsitutul",
-      githubUrl: "https://github.com/smsitutul",
+      liveUrl: "https://github.com/smshaiful",
+      githubUrl: "https://github.com/smshaiful",
     },
     {
       id: "snn-rc-controller",
@@ -347,8 +347,8 @@ if cursor.rowcount == 0:
         "Sub-5ms Event-Driven Reflex Latency",
         "Over 80% Projected Energy Reduction vs Traditional CNNs",
       ],
-      liveUrl: "https://github.com/smsitutul",
-      githubUrl: "https://github.com/smsitutul",
+      liveUrl: "https://github.com/smshaiful",
+      githubUrl: "https://github.com/smshaiful",
     },
   ],
 
