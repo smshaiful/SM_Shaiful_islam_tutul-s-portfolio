@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import { Menu, X, Moon, Sun, Volume2, VolumeX, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 import { Theme } from '../hooks/useTheme';
 
 interface MobileNavProps {
   brandName: string;
-  theme: Theme;
-  onToggleTheme: () => void;
-  soundEnabled: boolean;
-  onToggleSound: () => void;
+  theme?: Theme;
+  onToggleTheme?: () => void;
+  soundEnabled?: boolean;
+  onToggleSound?: () => void;
   onOpenContact: () => void;
   onPlayClick?: () => void;
   onPlayHover?: () => void;
@@ -15,10 +15,6 @@ interface MobileNavProps {
 
 export const MobileNav: React.FC<MobileNavProps> = ({
   brandName,
-  theme,
-  onToggleTheme,
-  soundEnabled,
-  onToggleSound,
   onOpenContact,
   onPlayClick,
   onPlayHover,
@@ -67,7 +63,7 @@ export const MobileNav: React.FC<MobileNavProps> = ({
           className="flex items-center gap-2 font-serif text-xs uppercase tracking-wider font-semibold"
         >
           <div className="w-7 h-7 rounded-lg overflow-hidden border border-primary/50 shrink-0 shadow-sm shadow-primary/20">
-            <img src="/tutul.jpg" alt={brandName} className="w-full h-full object-cover object-top" />
+            <img src="./tutul.jpg" alt={brandName} className="w-full h-full object-cover object-top" />
           </div>
           <span className="truncate max-w-[120px]">{brandName}</span>
         </button>
@@ -123,29 +119,15 @@ export const MobileNav: React.FC<MobileNavProps> = ({
             ))}
           </div>
 
-          {/* Bottom Settings in Mobile Sheet */}
-          <div className="pt-6 border-t border-border/50 flex items-center justify-between font-mono text-xs">
-            <button
-              onClick={() => {
-                onToggleTheme();
-                onPlayClick?.();
-              }}
-              className="flex items-center gap-2 p-3 rounded-2xl bg-card border border-border text-foreground"
-            >
-              {theme === 'dark' ? <Moon className="w-4 h-4 text-primary" /> : <Sun className="w-4 h-4 text-primary" />}
-              <span className="uppercase">{theme} MODE</span>
-            </button>
-
-            <button
-              onClick={() => {
-                onToggleSound();
-                onPlayClick?.();
-              }}
-              className="flex items-center gap-2 p-3 rounded-2xl bg-card border border-border text-foreground"
-            >
-              {soundEnabled ? <Volume2 className="w-4 h-4 text-primary" /> : <VolumeX className="w-4 h-4 opacity-50" />}
-              <span>{soundEnabled ? 'SOUND ON' : 'MUTED'}</span>
-            </button>
+          {/* Bottom Status in Mobile Sheet */}
+          <div className="pt-6 border-t border-border/50 flex items-center justify-between font-mono text-xs text-foreground-muted">
+            <span className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="uppercase">Available for Work</span>
+            </span>
+            <span className="text-[11px] uppercase tracking-wider text-primary font-bold">
+              DARK MODE
+            </span>
           </div>
         </div>
       )}

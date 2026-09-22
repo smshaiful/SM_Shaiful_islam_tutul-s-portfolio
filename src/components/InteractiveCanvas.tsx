@@ -12,7 +12,7 @@ interface InteractiveCanvasProps {
 export const InteractiveCanvas: React.FC<InteractiveCanvasProps> = ({
   theme,
   heroPhase,
-  performanceMode = 'high',
+  performanceMode = 'low',
   isVisible = true,
   opacity = 1,
 }) => {

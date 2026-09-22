@@ -204,7 +204,7 @@ export const AIAssistant: React.FC<AIAssistantProps> = ({
                 value={inputVal}
                 onChange={(e) => setInputVal(e.target.value)}
                 placeholder="Ask about tech, projects, or background..."
-                className="flex-1 bg-muted/60 border border-border/70 rounded-full px-4 py-2 text-xs text-foreground focus:outline-none focus:border-primary transition-colors font-sans"
+                className="flex-1 bg-card border border-border/70 rounded-full px-4 py-2.5 text-xs sm:text-sm text-foreground placeholder:text-foreground-muted focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-colors font-sans"
               />
               <button
                 type="submit"
@@ -235,7 +235,9 @@ export const AIAssistant: React.FC<AIAssistantProps> = ({
               </a>
               <a
                 href={resumePdfUrl}
-                download
+                download="SM_Shaiful_Islam_Tutul_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-1 hover:text-primary transition-colors"
               >
                 <Download className="w-3 h-3" />

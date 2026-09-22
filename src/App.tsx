@@ -16,7 +16,6 @@ import { ExperienceTimeline } from './components/ExperienceTimeline';
 import { AwardsRecognition } from './components/AwardsRecognition';
 import { Footer } from './components/Footer';
 import { AIAssistant } from './components/AIAssistant';
-import { SettingsMenu } from './components/SettingsMenu';
 import { ContactDrawer } from './components/ContactDrawer';
 import { MobileNav } from './components/MobileNav';
 import { CustomCursor } from './components/CustomCursor';
@@ -40,12 +39,11 @@ export const App: React.FC = () => {
 
   const [activeProjectId, setActiveProjectId] = useState<string | null>(getProjectIdFromHash());
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-  const [isSettingsOpen, setIsSettingsOpen] = useState(false);
   const [isContactOpen, setIsContactOpen] = useState(false);
-  const [performanceMode, setPerformanceMode] = useState<'high' | 'balanced' | 'low'>('high');
+  const [performanceMode] = useState<'high' | 'balanced' | 'low'>('low');
 
-  const { theme, setTheme, toggleTheme } = useTheme();
-  const { soundEnabled, toggleSound, playClick, playHover, playSwitch, playSuccess } = useSoundEffects();
+  const { theme } = useTheme();
+  const { playClick, playHover, playSuccess } = useSoundEffects();
   const { heroPhase, isHeroVisible, heroCanvasOpacity } = useScrollProgress();
 
   // Listen to browser back/forward buttons
@@ -142,9 +140,6 @@ export const App: React.FC = () => {
       {/* 4. Fixed Top Header */}
       <Header
         brandName={resumeData.personalInfo.name}
-        soundEnabled={soundEnabled}
-        onToggleSound={toggleSound}
-        onOpenSettings={() => setIsSettingsOpen(true)}
         onOpenContact={() => setIsContactOpen(true)}
         onPlayClick={playClick}
         onPlayHover={playHover}
@@ -195,6 +190,7 @@ export const App: React.FC = () => {
           awards={resumeData.awards}
           stats={resumeData.stats}
           onPlayHover={playHover}
+          onPlayClick={playClick}
         />
       </main>
 
@@ -222,10 +218,6 @@ export const App: React.FC = () => {
       {/* 8. Mobile Navigation & Floating Dock */}
       <MobileNav
         brandName={resumeData.personalInfo.name}
-        theme={theme}
-        onToggleTheme={toggleTheme}
-        soundEnabled={soundEnabled}
-        onToggleSound={toggleSound}
         onOpenContact={() => setIsContactOpen(true)}
         onPlayClick={playClick}
         onPlayHover={playHover}
@@ -236,28 +228,6 @@ export const App: React.FC = () => {
         project={selectedProject}
         onClose={() => setSelectedProject(null)}
         onPlayClick={playClick}
-      />
-
-      <SettingsMenu
-        isOpen={isSettingsOpen}
-        onClose={() => setIsSettingsOpen(false)}
-        theme={theme}
-        onThemeChange={(newTheme) => {
-          setTheme(newTheme);
-          playSwitch();
-        }}
-        soundEnabled={soundEnabled}
-        onToggleSound={() => {
-          toggleSound();
-          playSwitch();
-        }}
-        performanceMode={performanceMode}
-        onPerformanceChange={(mode) => {
-          setPerformanceMode(mode);
-          playClick();
-        }}
-        onPlayClick={playClick}
-        onPlayHover={playHover}
       />
 
       <ContactDrawer

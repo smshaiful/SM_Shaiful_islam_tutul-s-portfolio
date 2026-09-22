@@ -74,19 +74,19 @@ export const ProjectsShowcase: React.FC<ProjectsShowcaseProps> = ({
         {filteredProjects.map((project) => (
           <article
             key={project.id}
+            onMouseEnter={onPlayHover}
             onClick={() => {
               onPlayClick?.();
               onSelectProject(project);
             }}
-            onMouseEnter={onPlayHover}
-            className="group cursor-pointer rounded-3xl overflow-hidden border border-border/60 hover:border-primary/50 bg-card/40 backdrop-blur-md transition-all duration-500 hover:shadow-2xl hover:shadow-primary/15 flex flex-col justify-between"
+            className="group relative rounded-3xl bg-card/60 border border-border/60 hover:border-primary/60 transition-all duration-500 overflow-hidden flex flex-col justify-between hover:shadow-2xl hover:shadow-primary/10 cursor-pointer"
           >
-            {/* Project Media Wrapper */}
-            <div className="relative aspect-[16/10] w-full overflow-hidden bg-muted/40">
+            {/* Project Image Container */}
+            <div className="relative aspect-[16/10] overflow-hidden bg-muted">
               <img
                 src={project.featuredImage}
                 alt={project.title}
-                className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-105"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />

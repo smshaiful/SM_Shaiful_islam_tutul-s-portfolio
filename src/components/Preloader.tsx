@@ -62,7 +62,7 @@ export const Preloader: React.FC<PreloaderProps> = ({ onComplete, brandName }) =
         <div className="relative mb-6">
           <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-2xl p-[2px] bg-gradient-to-tr from-primary to-violet-400 shadow-2xl shadow-primary/40 flex items-center justify-center backdrop-blur-md overflow-hidden">
             <img
-              src="/tutul.jpg"
+              src="./tutul.jpg"
               alt={brandName}
               className="w-full h-full object-cover object-top rounded-[14px]"
             />

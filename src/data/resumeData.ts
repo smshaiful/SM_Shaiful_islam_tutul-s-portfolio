@@ -20,7 +20,7 @@ export const resumeData: PortfolioData = {
     email: "smshaifulislam46@gmail.com",
     phone: "01798955785",
     availability: "Actively seeking research collaboration with professors & research labs",
-    resumePdfUrl: "#resume-download",
+    resumePdfUrl: "./SM_Shaiful_Islam_Tutul_Resume.pdf",
     socials: [
       { name: "GitHub", url: "https://github.com/smsitutul", index: "01", handle: "@smsitutul" },
       { name: "LinkedIn", url: "https://linkedin.com", index: "02", handle: "smsitutul" },
@@ -109,10 +109,12 @@ export const resumeData: PortfolioData = {
       team: "Clever Sapiens (JSTU)",
       scope: ["Biomedical DSP", "Embedded Systems", "Python GUI", "Telemedicine"],
       stack: ["Arduino Nano", "AD8232 ECG Module", "Python", "Tkinter", "Matplotlib", "PySerial", "PyAutoGUI"],
-      featuredImage: "/projects/robofusion-gui.png",
+      featuredImage: "./projects/robofusion-gui.png",
       gallery: [
-        "/projects/robofusion-gui.png",
-        "/projects/robofusion-circuit.png",
+        "./projects/robofusion-gui.png",
+        "./projects/robofusion-circuit.png",
+        "./projects/clever-sapiens-team.jpg",
+        "./projects/robofusion-participation-certificate.png",
       ],
       accentColor: "#00d4a0",
       description: "A portable, low-cost Electrocardiogram (ECG) monitoring station designed around the AD8232 sensor and Arduino Nano, paired with a custom dark-mode Python desktop telemetry suite that acquires heart waveforms, detects BPM in real time, generates medical red-grid PDF reports, and automatically dispatches them via WhatsApp.",
@@ -195,10 +197,10 @@ void detectBPM(int val) {
       team: "SM Shaiful Islam Tutul (JSTU EEE)",
       scope: ["Autonomous Navigation", "IR Sensor Array", "L298N Motor Driver", "Emergency Suppression"],
       stack: ["Arduino UNO", "L298N Motor Driver", "3x IR Flame Sensors", "MG90S Servo", "Mini DC Water Pump", "Arduino C++"],
-      featuredImage: "/projects/fire-fighting-robot-tutul.png",
+      featuredImage: "./projects/fire-fighting-robot-tutul.png",
       gallery: [
-        "/projects/fire-fighting-robot-tutul.png",
-        "/projects/fire-fighting-robot-team.jpg",
+        "./projects/fire-fighting-robot-tutul.png",
+        "./projects/fire-fighting-robot-team.jpg",
       ],
       accentColor: "#ff5c7c",
       description: "An autonomous mobile robotics prototype developed as a 1st-year engineering proof-of-concept that detects fire outbreaks via optical triangulation, autonomously navigates toward the heat source, and extinguishes flames using an oscillating servo-controlled water pump.",
@@ -410,13 +412,23 @@ if cursor.rowcount == 0:
 
   certificates: [
     {
+      id: "gp-personal-branding-ai",
+      title: "Personal Branding in AI Era",
+      issuer: "Grameenphone Ltd.",
+      poweredBy: "Grameenphone Academy",
+      date: "15th September 2026",
+      code: "GPA-AI-2026",
+      imageUrl: "./certificates/grameenphone-personal-branding-ai.png",
+      skills: ["Personal Branding", "Artificial Intelligence", "AI Era Strategy", "Professional Identity", "Leadership"],
+    },
+    {
       id: "google-image-captioning",
       title: "Create Image Captioning Models",
       issuer: "Simplilearn SkillUP",
       poweredBy: "Google Cloud",
       date: "20th September 2026",
       code: "10758835",
-      imageUrl: "/certificates/google-cloud-image-captioning.png",
+      imageUrl: "./certificates/google-cloud-image-captioning.png",
       skills: ["Computer Vision", "Deep Learning", "Image Captioning", "AI Modeling", "Google Cloud"],
     },
     {
@@ -426,7 +438,7 @@ if cursor.rowcount == 0:
       poweredBy: "Google Cloud",
       date: "29th August 2026",
       code: "10664073",
-      imageUrl: "/certificates/google-cloud-genai-studio.png",
+      imageUrl: "./certificates/google-cloud-genai-studio.png",
       skills: ["Generative AI", "Google Cloud GenAI Studio", "Prompt Engineering", "Foundation Models", "LLMs"],
     },
   ],
@@ -435,7 +447,13 @@ if cursor.rowcount == 0:
     {
       platform: "ROBOFUSION 1.0 — National Robotics Festival",
       count: 1,
-      honors: ["Real-Time ECG Monitoring System Demonstration (Clever Sapiens, JSTU)", "Excellence in Biomedical Embedded Systems Prototyping"],
+      certificateImage: "./certificates/robofusion-participation-certificate.png",
+      certificateTitle: "Certificate of Participation — ROBOFUSION 1.0",
+      honors: [
+        "Certificate of Participation — Active & Enthusiastic Participation (UFTB Robotics Club)",
+        "Real-Time ECG Monitoring System Demonstration (Team #34 Clever Sapiens, JSTU)",
+        "Excellence in Biomedical Embedded Systems Prototyping",
+      ],
     },
   ],
 

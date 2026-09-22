@@ -91,22 +91,22 @@ export const ECGProjectPage: React.FC<ECGProjectPageProps> = ({ onBack }) => {
   // Screenshots data for lightbox (including real team booth photo)
   const screenshots = [
     {
-      url: '/projects/robofusion-gui.png',
+      url: './projects/robofusion-gui.png',
       caption: 'Live ECG Waveform: 50 Hz real-time scrolling trace with color-coded BPM gauge and WhatsApp delivery trigger.',
       tag: 'LIVE TELEMETRY GUI'
     },
     {
-      url: '/projects/robofusion-circuit.png',
+      url: './projects/robofusion-circuit.png',
       caption: 'Hardware Circuit Schematics: AD8232 ECG module wired to Arduino Nano (3.3V, GND, A0, D10, D11).',
       tag: 'CIRCUIT SCHEMATICS'
     },
     {
-      url: '/projects/clever-sapiens-team.jpg',
+      url: './projects/clever-sapiens-team.jpg',
       caption: 'Team #34 Clever Sapiens at ROBOFUSION 1.0: Live demonstration and presentation booth at JSTU.',
       tag: 'COMPETITION BOOTH'
     },
     {
-      url: '/projects/robofusion-gui.png',
+      url: './projects/robofusion-gui.png',
       caption: 'Recording Session Dashboard: Live countdown timer, lead-off safety monitor, and instant PDF report compiler.',
       tag: 'RECORDING & REPORT'
     }
@@ -1163,12 +1163,12 @@ export const ECGProjectPage: React.FC<ECGProjectPageProps> = ({ onBack }) => {
 
         {/* Competition Booth Photo Showcase */}
         <div
-          onClick={() => setActiveLightboxImage('/projects/clever-sapiens-team.jpg')}
+          onClick={() => setActiveLightboxImage('./projects/clever-sapiens-team.jpg')}
           className="group relative mb-14 rounded-3xl overflow-hidden border-2 border-[#00d4a0]/40 bg-[#16233a] shadow-2xl cursor-pointer"
         >
           <div className="aspect-[16/9] w-full overflow-hidden">
             <img
-              src="/projects/clever-sapiens-team.jpg"
+              src="./projects/clever-sapiens-team.jpg"
               alt="Clever Sapiens Team #34 at ROBOFUSION 1.0"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
@@ -1200,7 +1200,7 @@ export const ECGProjectPage: React.FC<ECGProjectPageProps> = ({ onBack }) => {
           <div className="p-7 rounded-3xl bg-[#16233a] border-2 border-[#00d4a0] text-center space-y-4 shadow-xl shadow-[#00d4a0]/15 ring-1 ring-[#00d4a0]/30">
             <div className="relative w-24 h-24 mx-auto rounded-full overflow-hidden border-2 border-[#00d4a0] p-1 shadow-lg shadow-[#00d4a0]/30">
               <img
-                src="/tutul.jpg"
+                src="./tutul.jpg"
                 alt="SM Shaiful Islam Tutul"
                 className="w-full h-full object-cover rounded-full"
               />
@@ -1281,6 +1281,56 @@ export const ECGProjectPage: React.FC<ECGProjectPageProps> = ({ onBack }) => {
               <p className="text-xs sm:text-sm text-[#7d8ba1] mt-1">
                 JSTU, Dept. of EEE
               </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Official Certificate of Participation Showcase */}
+        <div className="mt-20 pt-16 border-t border-[#16233a]">
+          <div className="text-center max-w-3xl mx-auto mb-10 space-y-4">
+            <div className="inline-flex items-center gap-2 font-mono text-sm sm:text-base text-[#00d4a0] uppercase tracking-wider font-bold">
+              <span>● COMPETITION ACCREDITATION</span>
+            </div>
+            <h3 className="font-serif text-3xl sm:text-5xl md:text-6xl uppercase tracking-tight text-[#eaf1fb]">
+              Certificate of <span className="text-[#00d4a0] italic">Participation</span>
+            </h3>
+            <p className="text-base sm:text-lg text-[#7d8ba1]">
+              Awarded for active and enthusiastic participation in "WALTON Presents ROBOFUSION 1.0", organized by UFTB Robotics Club, University of Frontier Technology, Bangladesh.
+            </p>
+          </div>
+
+          <div
+            onClick={() => setActiveLightboxImage('./projects/robofusion-participation-certificate.png')}
+            className="group relative max-w-4xl mx-auto rounded-3xl overflow-hidden border-2 border-[#00d4a0]/50 bg-[#16233a] shadow-2xl cursor-pointer hover:border-[#00d4a0] transition-all duration-300 hover:shadow-[#00d4a0]/25"
+          >
+            <div className="relative aspect-[16/11] w-full overflow-hidden bg-black/40">
+              <img
+                src="./projects/robofusion-participation-certificate.png"
+                alt="ROBOFUSION 1.0 Certificate of Participation - SM Shaiful Islam Tutul"
+                className="w-full h-full object-contain p-3 sm:p-6 group-hover:scale-[1.02] transition-transform duration-500"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+            </div>
+
+            <div className="p-6 sm:p-8 bg-[#16233a] border-t border-[#16233a] flex flex-wrap items-center justify-between gap-4">
+              <div>
+                <div className="flex items-center gap-2 font-mono text-xs text-[#00d4a0] uppercase font-bold mb-1">
+                  <span>WALTON PRESENTS ROBOFUSION 1.0</span>
+                  <span>•</span>
+                  <span>NATIONAL ROBOTICS FESTIVAL</span>
+                </div>
+                <h4 className="font-serif text-2xl sm:text-3xl text-white font-bold">
+                  Official Certificate of Participation
+                </h4>
+                <p className="text-xs sm:text-sm text-[#7d8ba1] mt-1 font-mono">
+                  Awarded to: SM Shaiful Islam Tutul • Team #34 Clever Sapiens (JSTU)
+                </p>
+              </div>
+
+              <div className="inline-flex items-center gap-2 font-mono text-xs sm:text-sm text-[#00d4a0] bg-[#0f1b2d] px-5 py-2.5 rounded-full border border-[#00d4a0]/40 font-bold group-hover:bg-[#00d4a0] group-hover:text-[#0f1b2d] transition-all">
+                <Maximize2 className="w-4 h-4" />
+                <span>Click to View Full Size</span>
+              </div>
             </div>
           </div>
         </div>

@@ -3,33 +3,35 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: dark;
   --primary: #9047ff;
   --primary-rgb: 144, 71, 255;
   --primary-active: #7114ff;
   --primary-active-rgb: 113, 20, 255;
   --status-danger: #ff3b30;
   --status-success: #319f43;
-  --background: #f5efff;
-  --background-rgb: 245, 239, 255;
-  --foreground: #2a1647;
-  --foreground-rgb: 42, 22, 71;
-  --foreground-muted: #64698b;
-  --foreground-muted-rgb: 100, 105, 139;
-  --border: #e2e4f0;
-  --border-rgb: 226, 228, 240;
-  --card: #ffffff;
-  --card-rgb: 255, 255, 255;
-  --muted: #f1f2f9;
-  --muted-rgb: 241, 242, 249;
-  --contrast: #000000;
-  --contrast-rgb: 0, 0, 0;
-  --glass: rgba(255, 255, 255, 0.75);
-  --backdrop: rgba(0, 0, 0, 0.8);
-  --btn-stroke: linear-gradient(90deg, #2d257d 0%, #8e2de2 49%, #cbd5e1 100%);
-  --grid-line: rgba(184, 184, 184, 0.12);
+  --background: #121212;
+  --background-rgb: 18, 18, 18;
+  --foreground: #ffffff;
+  --foreground-rgb: 255, 255, 255;
+  --foreground-muted: #a3a6c1;
+  --foreground-muted-rgb: 163, 166, 193;
+  --border: #30343f;
+  --border-rgb: 48, 52, 63;
+  --card: #181818;
+  --card-rgb: 24, 24, 24;
+  --muted: #25282e;
+  --muted-rgb: 37, 40, 46;
+  --contrast: #ffffff;
+  --contrast-rgb: 255, 255, 255;
+  --glass: rgba(24, 24, 24, 0.75);
+  --backdrop: rgba(0, 0, 0, 0.9);
+  --btn-stroke: linear-gradient(90deg, rgba(45, 37, 125, 0.6) 0%, rgba(142, 45, 226, 0.6) 50%, rgba(144, 71, 255, 0.6) 100%);
+  --grid-line: rgba(255, 255, 255, 0.04);
 }
 
 :root[data-theme='dark'] {
+  color-scheme: dark;
   --primary: #9047ff;
   --primary-rgb: 144, 71, 255;
   --primary-active: #7114ff;
@@ -142,15 +144,35 @@
   pointer-events: none;
 }
 
-/* Hide default cursor on desktop when custom cursor active */
+/* Form Input & Textarea Visibility Styles */
+input, textarea, select {
+  color: #ffffff !important;
+  caret-color: #9047ff !important;
+  background-color: #25282e !important;
+}
+
+input::placeholder, textarea::placeholder {
+  color: #9ca3af !important;
+  opacity: 1 !important;
+}
+
+select option {
+  background-color: #181818 !important;
+  color: #ffffff !important;
+}
+
+/* Hide default cursor on desktop when custom cursor active, but keep native text cursor for inputs */
 @media (pointer: fine) {
   body.custom-cursor-active {
     cursor: none;
   }
   body.custom-cursor-active a,
-  body.custom-cursor-active button,
-  body.custom-cursor-active input,
-  body.custom-cursor-active textarea {
+  body.custom-cursor-active button {
     cursor: none;
+  }
+  body.custom-cursor-active input,
+  body.custom-cursor-active textarea,
+  body.custom-cursor-active select {
+    cursor: text !important;
   }
 }

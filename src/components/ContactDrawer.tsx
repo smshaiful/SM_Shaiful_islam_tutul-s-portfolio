@@ -109,7 +109,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
                   placeholder="e.g. Alex Morgan"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-muted/60 border border-border focus:border-primary focus:outline-none font-sans text-xs text-foreground transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-card border border-border text-foreground placeholder:text-foreground-muted focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none font-sans text-xs sm:text-sm transition-colors"
                 />
               </div>
 
@@ -123,7 +123,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
                   placeholder="alex@company.com"
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-muted/60 border border-border focus:border-primary focus:outline-none font-sans text-xs text-foreground transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-card border border-border text-foreground placeholder:text-foreground-muted focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none font-sans text-xs sm:text-sm transition-colors"
                 />
               </div>
 
@@ -134,12 +134,12 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
                 <select
                   value={formData.type}
                   onChange={(e) => setFormData({ ...formData, type: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-muted/60 border border-border focus:border-primary focus:outline-none font-sans text-xs text-foreground transition-colors"
+                  className="w-full px-4 py-3 rounded-xl bg-card border border-border text-foreground focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none font-sans text-xs sm:text-sm transition-colors"
                 >
-                  <option>Full-Time Engineering Role</option>
-                  <option>Freelance / Contract Project</option>
-                  <option>Advisory / Technical Consulting</option>
-                  <option>General Inquiries</option>
+                  <option className="bg-card text-foreground">Full-Time Engineering Role</option>
+                  <option className="bg-card text-foreground">Freelance / Contract Project</option>
+                  <option className="bg-card text-foreground">Advisory / Technical Consulting</option>
+                  <option className="bg-card text-foreground">General Inquiries</option>
                 </select>
               </div>
 
@@ -153,7 +153,7 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
                   placeholder="Briefly describe your vision, product scope, or opportunity..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl bg-muted/60 border border-border focus:border-primary focus:outline-none font-sans text-xs text-foreground transition-colors resize-none"
+                  className="w-full px-4 py-3 rounded-xl bg-card border border-border text-foreground placeholder:text-foreground-muted focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none font-sans text-xs sm:text-sm transition-colors resize-none"
                 />
               </div>
 
@@ -217,7 +217,9 @@ export const ContactDrawer: React.FC<ContactDrawerProps> = ({
                 <span className="text-foreground-muted uppercase block mb-2">Resume Document</span>
                 <a
                   href={resumePdfUrl}
-                  download
+                  download="SM_Shaiful_Islam_Tutul_Resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-3 py-2 rounded-xl bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-white transition-colors text-[11px]"
                 >
                   <Download className="w-3.5 h-3.5" />

@@ -90,12 +90,12 @@ export const FireFightingRobotPage: React.FC<FireFightingRobotPageProps> = ({ on
   // Gallery items (ONLY the 2 authentic prototype photos provided by user)
   const galleryItems = [
     {
-      url: '/projects/fire-fighting-robot-tutul.png',
+      url: './projects/fire-fighting-robot-tutul.png',
       caption: 'SM Shaiful Islam Tutul showcasing the assembled Autonomous Fire Fighting Robot prototype in the EEE hardware laboratory at JSTU.',
       tag: 'HARDWARE PROTOTYPE IN LAB'
     },
     {
-      url: '/projects/fire-fighting-robot-team.jpg',
+      url: './projects/fire-fighting-robot-team.jpg',
       caption: 'Engineering development team showcasing the Autonomous Fire Fighting Robot prototype at Jamalpur Science And Technology University (JSTU).',
       tag: 'PROJECT DEVELOPMENT TEAM'
     }
@@ -1107,7 +1107,7 @@ void haltRover() {
         <div className="p-8 sm:p-12 rounded-3xl bg-[#16233a] border-2 border-[#ff5c7c]/40 flex flex-col md:flex-row items-center gap-8 shadow-2xl">
           <div className="w-32 h-32 sm:w-40 sm:h-40 rounded-full overflow-hidden border-4 border-[#ff5c7c] shrink-0 shadow-xl">
             <img
-              src="/tutul.jpg"
+              src="./tutul.jpg"
               alt="SM Shaiful Islam Tutul"
               className="w-full h-full object-cover"
             />

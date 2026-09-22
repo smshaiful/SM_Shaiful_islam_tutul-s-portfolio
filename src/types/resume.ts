@@ -111,6 +111,8 @@ export interface AwardItem {
   platform: string;
   count: number;
   honors: string[];
+  certificateImage?: string;
+  certificateTitle?: string;
 }
 
 export interface StatItem {

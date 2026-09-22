@@ -60,7 +60,7 @@ export const WhatWeDo: React.FC<WhatWeDoProps> = ({
               {/* Image Container with Subtle Zoom on Hover */}
               <div className="relative aspect-[3/4] w-full overflow-hidden">
                 <img
-                  src="/tutul.jpg"
+                  src="./tutul.jpg"
                   alt="SM Shaiful Islam Tutul - EEE Student at JSTU"
                   className="w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover/img:scale-105"
                 />
@@ -108,25 +108,25 @@ export const WhatWeDo: React.FC<WhatWeDoProps> = ({
               {/* User's Exact Provided Bio */}
               <div className="space-y-6 text-foreground/95 font-sans text-base sm:text-xl leading-relaxed">
                 <p>
-                  I'm <strong className="text-white font-serif tracking-normal text-xl sm:text-2xl font-bold">SM Shaiful Islam Tutul</strong>, a 2nd-year EEE student at{' '}
+                  I'm <strong className="text-foreground font-serif tracking-normal text-xl sm:text-2xl font-bold">SM Shaiful Islam Tutul</strong>, a 2nd-year EEE student at{' '}
                   <span className="text-primary font-bold">JSTU, Bangladesh</span>, passionate about{' '}
-                  <span className="text-white font-semibold underline decoration-primary/60 underline-offset-4">Neuromorphic Computing</span>,{' '}
-                  <span className="text-white font-semibold underline decoration-primary/60 underline-offset-4">Embedded Systems</span>, and{' '}
-                  <span className="text-white font-semibold underline decoration-primary/60 underline-offset-4">Signal Processing</span>.
+                  <span className="text-foreground font-semibold underline decoration-primary/60 underline-offset-4">Neuromorphic Computing</span>,{' '}
+                  <span className="text-foreground font-semibold underline decoration-primary/60 underline-offset-4">Embedded Systems</span>, and{' '}
+                  <span className="text-foreground font-semibold underline decoration-primary/60 underline-offset-4">Signal Processing</span>.
                 </p>
 
                 <p>
-                  Currently building a <strong className="text-primary font-bold">hardware SNN-based RC Vehicle Controller</strong>. <strong className="text-white font-bold">Python</strong> is my primary tool for simulations and research experiments, and I'm also exploring <strong className="text-white font-bold">Brian2</strong> and <strong className="text-white font-bold">Qiskit</strong>.
+                  Currently building a <strong className="text-primary font-bold">hardware SNN-based RC Vehicle Controller</strong>. <strong className="text-foreground font-bold">Python</strong> is my primary tool for simulations and research experiments, and I'm also exploring <strong className="text-foreground font-bold">Brian2</strong> and <strong className="text-foreground font-bold">Qiskit</strong>.
                 </p>
               </div>
 
               {/* Academic Collaboration Notice Box */}
-              <div className="p-6 sm:p-8 rounded-3xl bg-gradient-to-r from-primary/20 via-purple-950/40 to-transparent border-2 border-primary/50 mt-8 space-y-3 shadow-xl">
+              <div className="p-6 sm:p-8 rounded-3xl bg-primary/10 border-2 border-primary/40 mt-8 space-y-3 shadow-xl">
                 <div className="flex items-center gap-2.5 font-mono text-xs sm:text-sm uppercase tracking-wider text-primary font-bold">
                   <Sparkles className="w-4 h-4 text-primary animate-pulse" />
                   <span>ACADEMIC RESEARCH COLLABORATION</span>
                 </div>
-                <p className="font-serif text-2xl sm:text-3xl text-white tracking-tight leading-snug font-bold">
+                <p className="font-serif text-2xl sm:text-3xl text-foreground tracking-tight leading-snug font-bold">
                   "I'm actively looking for research collaboration with professors in these fields."
                 </p>
                 <p className="font-mono text-xs sm:text-sm text-foreground-muted uppercase tracking-wide font-semibold">
@@ -153,7 +153,9 @@ export const WhatWeDo: React.FC<WhatWeDoProps> = ({
                 href={resumePdfUrl}
                 onClick={onPlayClick}
                 onMouseEnter={onPlayHover}
-                download="SM_Shaiful_Islam_Tutul_CV.pdf"
+                download="SM_Shaiful_Islam_Tutul_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="px-8 py-4 rounded-full border-2 border-border hover:border-primary/60 bg-card/60 backdrop-blur-sm text-foreground font-sans text-sm sm:text-base font-bold tracking-wide hover:scale-105 active:scale-95 transition-all flex items-center gap-2.5"
               >
                 <Download className="w-5 h-5" />
@@ -198,6 +200,7 @@ export const WhatWeDo: React.FC<WhatWeDoProps> = ({
                 <h4 className="font-serif text-3xl sm:text-4xl tracking-tight uppercase mb-2.5 group-hover:text-primary transition-colors font-bold">
                   {cap.title}
                 </h4>
+
                 <p className="font-mono text-sm sm:text-base uppercase tracking-wider text-primary font-bold mb-5">
                   {cap.subtitle}
                 </p>

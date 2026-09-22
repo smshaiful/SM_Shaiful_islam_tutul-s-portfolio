@@ -139,74 +139,97 @@ export const ExperienceTimeline: React.FC<ExperienceTimelineProps> = ({
               ))}
             </div>
           </div>
-
-          {/* 2. Professional Certifications */}
-          {certificates.length > 0 && (
-            <div className="space-y-6">
-              <div className="flex items-center gap-3 pb-4 border-b border-border/50 font-mono text-sm sm:text-base uppercase tracking-wider text-foreground-muted font-bold">
-                <Award className="w-5 h-5 text-primary" />
-                <span>PROFESSIONAL CERTIFICATIONS</span>
-              </div>
-
-              <div className="space-y-6">
-                {certificates.map((cert) => (
-                  <div
-                    key={cert.id}
-                    onMouseEnter={onPlayHover}
-                    onClick={() => {
-                      onPlayClick?.();
-                      setActiveCertificate(cert);
-                    }}
-                    className="group p-6 sm:p-7 rounded-3xl bg-card/50 border border-border/60 hover:border-primary/60 transition-all duration-300 shadow-xl cursor-pointer hover:-translate-y-1 flex flex-col justify-between"
-                  >
-                    <div className="flex items-start justify-between gap-4 mb-4">
-                      <div>
-                        <div className="flex items-center gap-2 mb-2 font-mono text-xs font-bold text-primary">
-                          <span className="px-2.5 py-0.5 rounded-full bg-primary/15 border border-primary/30">
-                            {cert.poweredBy}
-                          </span>
-                          <span>•</span>
-                          <span className="text-foreground-muted">{cert.issuer}</span>
-                        </div>
-
-                        <h4 className="font-serif text-xl sm:text-2xl uppercase tracking-tight group-hover:text-primary transition-colors font-bold">
-                          {cert.title}
-                        </h4>
-                      </div>
-
-                      <div className="p-2 rounded-full bg-muted/60 text-foreground-muted group-hover:text-primary group-hover:bg-primary/10 transition-colors shrink-0">
-                        <Maximize2 className="w-4 h-4" />
-                      </div>
-                    </div>
-
-                    {/* Certificate Thumbnail Preview */}
-                    <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-black/40 border border-border/40 mb-4">
-                      <img
-                        src={cert.imageUrl}
-                        alt={cert.title}
-                        className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                      <div className="absolute bottom-3 left-3 text-xs font-mono text-white/90 font-medium">
-                        ID: {cert.code}
-                      </div>
-                    </div>
-
-                    <div className="flex items-center justify-between font-mono text-xs text-foreground-muted border-t border-border/30 pt-3">
-                      <span>Issued: {cert.date}</span>
-                      <span className="text-primary font-bold group-hover:translate-x-1 transition-transform flex items-center gap-1">
-                        View Certificate ⟶
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
         </div>
       </div>
+
+      {/* 2. Professional Certifications (2 in first row, 1 centered in next row) */}
+      {certificates.length > 0 && (
+        <div className="mt-20 pt-16 border-t border-border/40 space-y-8">
+          <div className="flex items-center justify-between pb-4 border-b border-border/50">
+            <div className="flex items-center gap-3 font-mono text-sm sm:text-base uppercase tracking-wider text-foreground-muted font-bold">
+              <Award className="w-5 h-5 text-primary" />
+              <span>PROFESSIONAL CERTIFICATIONS</span>
+            </div>
+            <span className="font-mono text-xs text-primary font-semibold hidden sm:inline">
+              [{certificates.length} VERIFIED CREDENTIALS]
+            </span>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {certificates.map((cert, index) => {
+              const isThirdCentered = index === 2;
+              return (
+                <div
+                  key={cert.id}
+                  onMouseEnter={onPlayHover}
+                  onClick={() => {
+                    onPlayClick?.();
+                    setActiveCertificate(cert);
+                  }}
+                  className={`group p-6 sm:p-8 rounded-3xl bg-card/50 border border-border/60 hover:border-primary/60 transition-all duration-300 shadow-xl cursor-pointer hover:-translate-y-1 flex flex-col justify-between ${
+                    isThirdCentered ? 'md:col-span-2 md:w-[calc(50%-1rem)] md:mx-auto' : ''
+                  }`}
+                >
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <div>
+                      <div className="flex items-center gap-2 mb-2 font-mono text-xs font-bold text-primary">
+                        <span className="px-2.5 py-0.5 rounded-full bg-primary/15 border border-primary/30">
+                          {cert.poweredBy}
+                        </span>
+                        <span>•</span>
+                        <span className="text-foreground-muted">{cert.issuer}</span>
+                      </div>
+
+                      <h4 className="font-serif text-xl sm:text-2xl uppercase tracking-tight group-hover:text-primary transition-colors font-bold">
+                        {cert.title}
+                      </h4>
+                    </div>
+
+                    <div className="p-2 rounded-full bg-muted/60 text-foreground-muted group-hover:text-primary group-hover:bg-primary/10 transition-colors shrink-0">
+                      <Maximize2 className="w-4 h-4" />
+                    </div>
+                  </div>
+
+                  {/* Certificate Thumbnail Preview */}
+                  <div className="relative aspect-[16/10] w-full rounded-2xl overflow-hidden bg-black/40 border border-border/40 mb-4">
+                    <img
+                      src={cert.imageUrl}
+                      alt={cert.title}
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                    <div className="absolute bottom-3 left-3 text-xs font-mono text-white/90 font-medium">
+                      ID: {cert.code}
+                    </div>
+                  </div>
+
+                  {/* Skills tags */}
+                  {cert.skills && cert.skills.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {cert.skills.map((skill) => (
+                        <span
+                          key={skill}
+                          className="px-2.5 py-0.5 rounded-md text-[11px] font-mono bg-muted/70 text-foreground/80 border border-border/30"
+                        >
+                          {skill}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  <div className="flex items-center justify-between font-mono text-xs text-foreground-muted border-t border-border/30 pt-3">
+                    <span>Issued: {cert.date}</span>
+                    <span className="text-primary font-bold group-hover:translate-x-1 transition-transform flex items-center gap-1">
+                      View Certificate ⟶
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* Certificate Modal Lightbox */}
       {activeCertificate && (
