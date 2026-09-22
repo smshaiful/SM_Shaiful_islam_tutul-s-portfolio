@@ -22,11 +22,9 @@ export const resumeData: PortfolioData = {
     availability: "Actively seeking research collaboration with professors & research labs",
     resumePdfUrl: "./SM_Shaiful_Islam_Tutul_Resume.pdf",
     socials: [
-      { name: "GitHub", url: "https://github.com/smsitutul", index: "01", handle: "@smsitutul" },
-      { name: "LinkedIn", url: "https://linkedin.com", index: "02", handle: "smsitutul" },
-      { name: "ResearchGate", url: "https://researchgate.net", index: "03", handle: "tutul-jstu" },
-      { name: "Twitter / X", url: "https://x.com", index: "04", handle: "@tutul_dev" },
-      { name: "Email", url: "mailto:smshaifulislam46@gmail.com", index: "05", handle: "smshaifulislam46@gmail.com" },
+      { name: "LinkedIn", url: "https://www.linkedin.com/in/sm-shaiful-islam-tutul-3a6423389/", index: "01", handle: "sm-shaiful-islam-tutul" },
+      { name: "GitHub", url: "https://github.com/smsitutul", index: "02", handle: "@smsitutul" },
+      { name: "Email", url: "mailto:smshaifulislam46@gmail.com", index: "03", handle: "smshaifulislam46@gmail.com" },
     ],
   },
 

@@ -197,6 +197,9 @@ export const App: React.FC = () => {
       {/* 6. Footer & Giant Typographic Callout */}
       <Footer
         name={resumeData.personalInfo.name}
+        title={resumeData.personalInfo.title}
+        email={resumeData.personalInfo.email}
+        resumePdfUrl={resumeData.personalInfo.resumePdfUrl}
         location={resumeData.personalInfo.location}
         timezone={resumeData.personalInfo.timezone}
         socials={resumeData.personalInfo.socials}
